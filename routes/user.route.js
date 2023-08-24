@@ -48,7 +48,7 @@ userRoute.post("/login", async (req, res) => {
             .send({ msg: "something went wrong or wrong password" });
         } else {
           const token = jsonwebtoken.sign({ user: user.email }, "blogs");
-          res.status(200).send({ msg: "login successfull", token });
+          res.status(200).send({ msg: "login successfull", token, user });
         }
       });
     } else {
